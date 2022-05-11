@@ -1,0 +1,234 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*:focus { 
+    outline: none; 
+} 
+
+.tool-list-container {
+    display: flex;
+    width: 100%;
+    margin: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.tool-list-container .list-item {
+    width: 200px;
+    height: 160px;
+    padding: 10px;
+    padding-top: 40px;
+    cursor: pointer;
+    border: 1px #FFF solid;
+}
+
+.tool-list-container .list-item:hover {
+    border: 1px #CCE solid;
+    border-radius: 5px;
+}
+
+.tool-list-container .list-item img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.tool-list-container .list-item div {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tool-pop-containner {
+    display: none;
+    padding: 20px;
+}
+
+.tool-hosts-pop {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.hosts-edit-screen, .coding-edit-screen {
+    display: block;
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+.coding-edit-screen{
+    height: 60%;
+}
+
+.tool-pop-tab {
+    display: flex;
+}
+
+.tool-pop-tab div {
+    margin-right: 30px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.icon-back {
+    background: url('../assets/back.png') no-repeat;
+    background-size: cover;
+}
+
+.icon-save {
+    background: url('../assets/save.png') no-repeat;
+    background-size: cover;
+}
+
+.icon-reflash {
+    background: url('../assets/reflash.png') no-repeat;
+    background-size: cover;
+}
+
+.button {
+    background: #7892c2;
+    background-image: -webkit-linear-gradient(top, #7892c2, #476e9e);
+    background-image: -moz-linear-gradient(top, #7892c2, #476e9e);
+    background-image: -ms-linear-gradient(top, #7892c2, #476e9e);
+    background-image: -o-linear-gradient(top, #7892c2, #476e9e);
+    background-image: linear-gradient(to bottom, #7892c2, #476e9e);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    text-shadow: 0px 1px 0px #283966;
+    -webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+    -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 6px 20px 6px 20px;
+    border: solid #4e6096 1px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: #ffffff;
+    background: #476e9e;
+    text-decoration: none;
+}
+
+.box-title{
+    margin-top: 20px;
+}
+
+.coding-box{
+    border: 1px solid #CCC;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.coding-box-item{
+    display: none;
+}
+
+.coding-box-item:nth-of-type(1){
+    display: block;
+}
+
+.coding-box-item .button{
+    margin-right: 10px;
+}
+
+.coding-tab-list{
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+    border-bottom: 1px solid #CCC;
+}
+
+.coding-tab-list li{
+    display: inline-block;
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid #FFF;
+    border-bottom: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #666;
+}
+
+.coding-tab-list li:hover{
+    color: #000;
+}
+
+.coding-tab-list li.selected{
+    border: 1px solid #BBB;
+    border-bottom: 0px;
+    color: #000;
+}
+
+#coding-unix-box p{
+    font-size: 14px;
+}
+
+#coding-unix-box input{
+    width: 200px;
+    line-height: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#coding-unix-box .button{
+    width: 80px;
+    font-size: 12px;
+    padding: 5px 10px 5px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.system-box, .network-box{
+    border: 1px solid #CCC;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.system-info-title{
+    display: inline-block;
+    width: 120px;
+}
+
+.qrcode-box{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.qrcode-box .qrcode-input{
+    width: 50%;
+    height: 200px;
+}
+
+.qrcode-box #qrcode-image{
+    margin-left: 30px;
+}
+
+.qrcode-box img{
+    width: 200px;
+    height: 200px;
+}

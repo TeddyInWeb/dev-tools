@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>开发工具箱</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="tool-list-container" id="tool-list-container">
+        <div class="list-item" onclick="hosts.readHosts()">
+            <img src="./src/assets/hosts.png">
+            <div>编辑HOSTS</div>
+        </div>
+        <div class="list-item" onclick="coding.init()">
+            <img src="./src/assets/coding.png">
+            <div>编码/解码</div>
+        </div>
+        <div class="list-item" onclick="system.getSystemInfo()">
+            <img src="./src/assets/system.png">
+            <div>获取系统信息</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/color.png">
+            <div>颜色代码查询</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/json.png">
+            <div>JSON格式化</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/img.png">
+            <div>图片转base64</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/excel.png">
+            <div>Excel/json转换</div>
+        </div>
+        <div class="list-item" onclick="util.openPop('tool-qrcode-pop')">
+            <img src="./src/assets/qrcode.png">
+            <div>生成二维码</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/trans.png">
+            <div>中/英翻译</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/keyboard.png">
+            <div>键盘keycode查询</div>
+        </div>
+    </section>
+    <section class="tool-pop-containner" id="tool-pop-containner">
+        <!-- hosts -->
+        <section class="pop tool-hosts-pop" id="tool-hosts-pop">
+            <div class="tool-pop-tab">
+                <div class="icon icon-back" title="返回" onclick="util.closePop()"></div>
+                <div class="icon icon-save" title="保存" onclick="hosts.saveFile()"></div>
+                <div class="icon icon-reflash" title="刷新" onclick="hosts.readHosts()"></div>
+            </div>
+            <textarea class="hosts-edit-screen" id="hosts-edit-screen"></textarea>
+        </section>
+
+        <!-- encode/decode -->
+        <section class="pop tool-coding-pop" id="tool-coding-pop">
+            <div class="tool-pop-tab">
+                <div class="icon icon-back" title="返回" onclick="util.closePop()"></div>
+            </div>
+            <div class="coding-box">
+                <ul class="coding-tab-list">
+                    <li class="selected" onclick="coding.changeTab(this, 'Url')">Url编码/解码</li>
+                    <li onclick="coding.changeTab(this, 'Unix')">Unix时间戳/日期</li>
+                </ul>
+                <div class="coding-box-item" id="coding-url-box">
+                    <textarea class="coding-edit-screen" id="coding-edit-screen" placeholder="请输入内容"></textarea>
+                    <button class="button" onclick="coding.urlCoding('encode')">编码</button>
+                    <button class="button" onclick="coding.urlCoding('decode')">解码</button>
+                </div>
+                <div class="coding-box-item" id="coding-unix-box">
+                    <p>当前毫秒时间戳(北京时间):
+                        <span id="unix-now"></span>
+                        <button class="button" onclick="coding.setTimestamp()">刷新</button>
+                    </p>
+                    <input type="text" id="unix-input-date" placeholder="请输入日期">
+                    <button class="button" onclick="coding.dateToTime()">转时间戳</button>
+                    <input type="text" id="unix-result-timestamp" readonly><br><br>
+                    <input type="text" id="unix-input-timestamp" placeholder="请输入时间戳">
+                    <button class="button" onclick="coding.timeToDate()">转日期</button>
+                    <input type="text" id="unix-result-date" readonly>
+                </div>
+            </div>
+        </section>
+
+        <!-- system -->
+        <section class="pop tool-system-pop" id="tool-system-pop">
+            <div class="tool-pop-tab">
+                <div class="icon icon-back" title="返回" onclick="util.closePop()"></div>
+            </div>
+            <p class="box-title">系统信息</p>
+            <div class="system-box">
+                <p><span class="system-info-title">PC名称:</span><span id="pc-name"></span></p>
+                <p><span class="system-info-title">操作系统:</span><span id="sys-name"></span></p>
+                <p><span class="system-info-title">cpu信息:</span><span id="cpus"></span></p>
+                <p><span class="system-info-title">内存:</span><span id="ram"></span></p>
+            </div>
+            <p class="box-title">网络信息</p>
+            <div class="network-box">
+                <p><span class="system-info-title">协议:</span><span id="ip-family"></span></p>
+                <p><span class="system-info-title">ip地址:</span><span id="ip-address"></span></p>
+                <p><span class="system-info-title">mac地址:</span><span id="mac-address"></span></p>
+            </div>
+        </section>
+
+        <!-- qrcode -->
+        <section class="pop tool-qrcode-pop" id="tool-qrcode-pop">
+            <div class="tool-pop-tab">
+                <div class="icon icon-back" title="返回" onclick="util.closePop()"></div>
+            </div>
+            <div class="qrcode-box">
+                <textarea class="qrcode-input" id="qrcode-input" placeholder="请输入内容"></textarea>
+                <div id="qrcode-image"></div>
+            </div>
+            <button class="button" onclick="qrcode.drawQrcode()">生成二维码</button>
+        </section>
+    </section>
+    <script src="src/js/index.js" charset="utf-8"></script>
+</body>
+
+</html>
